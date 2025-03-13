@@ -1,0 +1,15 @@
+{
+  "name": "energo-pro-alerts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn playwright test"
+  },
+  "dependencies": {
+    "@playwright/test": "1.51.0",
+    "@sendinblue/client": "3.3.1",
+    "@types/node": "22.13.10",
+    "dotenv": "16.4.7"
+  }
+}

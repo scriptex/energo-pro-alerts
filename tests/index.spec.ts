@@ -1,6 +1,7 @@
 import { existsSync, promises } from 'node:fs';
 import { resolve } from 'node:path';
 
+import { minify } from 'html-minifier';
 import { test } from '@playwright/test';
 
 import { html } from '../lib/html';
@@ -25,7 +26,15 @@ test('find alerts', async ({ page }) => {
 	const table = page.locator('.table-responsive');
 	const results = await table.innerHTML();
 
-	await email(results);
+	if (!results.includes('Няма прекъсвания за обекти на клиента')) {
+		await email(results);
+	}
 
-	await writeFile(filename, html(results), 'utf-8');
+	await writeFile(
+		filename,
+		minify(html(results), {
+			collapseWhitespace: true
+		}),
+		'utf-8'
+	);
 });

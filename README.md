@@ -1,7 +1,6 @@
 # Energo Pro Varna Alerts
 
 [![Github Build](https://github.com/scriptex/energo-pro-alerts/workflows/Build/badge.svg)](https://github.com/scriptex/energo-pro-alerts/actions?query=workflow%3ABuild)
-[![Send email](https://github.com/scriptex/energo-pro-alerts/actions/workflows/send-email.yml/badge.svg)](https://github.com/scriptex/energo-pro-alerts/actions/workflows/send-email.yml)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/34d3d75710534dc6a38c3584a1dcd068)](https://www.codacy.com/gh/scriptex/energo-pro-alerts/dashboard?utm_source=github.com&utm_medium=referral&utm_content=scriptex/energo-pro-alerts&utm_campaign=Badge_Grade)
 [![Codebeat Badge](https://codebeat.co/badges/d765a4c8-2c0e-44f2-89c3-fa364fdc14e6)](https://codebeat.co/projects/github-com-scriptex-energo-pro-alerts-master)

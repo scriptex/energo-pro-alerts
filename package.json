@@ -7,7 +7,7 @@
     "start": "yarn playwright test"
   },
   "dependencies": {
-    "@playwright/test": "1.51.0",
+    "@playwright/test": "1.51.1",
     "@sendinblue/client": "3.3.1",
     "@types/node": "22.13.10",
     "dotenv": "16.4.7"

@@ -1,6 +1,24 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+	"extends": [
+		"config:base",
+		":automergePatch",
+		":automergeMinor",
+		":automergeBranch",
+		":disableDependencyDashboard",
+		"group:allNonMajor"
+	],
+	"travis": {
+		"enabled": true
+	},
+	"assignees": ["@scriptex"],
+	"labels": ["dependencies"],
+	"rebaseWhen": "conflicted",
+	"vulnerabilityAlerts": {
+		"labels": ["security"],
+		"assignees": ["@scriptex"]
+	},
+	"major": {
+		"automerge": false
+	},
+	"schedule": ["* * 11,25 * *"]
 }

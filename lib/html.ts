@@ -1,7 +1,7 @@
-import { style } from "./style";
+import { style } from './style';
 
 export function html(text: string) {
-  return `
+	return `
   <html>
   <head>
     <title>Energo Pro Варна | Съобщения за аварии</title>

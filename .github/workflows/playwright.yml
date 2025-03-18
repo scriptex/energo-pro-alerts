@@ -11,6 +11,10 @@ jobs:
 
         runs-on: ubuntu-latest
 
+        permissions:
+            contents: write
+            pull-requests: write
+
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
@@ -35,3 +39,8 @@ jobs:
                   name: playwright-report
                   path: playwright-report/
                   retention-days: 30
+            - name: Push Changes
+              uses: ad-m/github-push-action@master
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: ${{ github.ref }}

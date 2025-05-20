@@ -25,7 +25,7 @@ test('find alerts', async ({ page }) => {
 	}
 
 	for (const credential of credentials) {
-		if (!Array.isArray(credentials) || credential.length !== 2) {
+		if (!Array.isArray(credential) || credential.length !== 2) {
 			continue;
 		}
 

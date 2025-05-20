@@ -31,8 +31,7 @@ jobs:
                   EMAIL_SUBJECT: ${{ secrets.EMAIL_SUBJECT }}
                   EMAIL_TO: ${{ secrets.EMAIL_TO }}
                   SENDINBLUE_API_KEY: ${{ secrets.SENDINBLUE_API_KEY }}
-                  USERNAME: ${{ secrets.USERNAME }}
-                  PASSWORD: ${{ secrets.PASSWORD }}
+                  CREDENTIALS: ${{ secrets.CREDENTIALS }}
             - uses: actions/upload-artifact@v4
               if: ${{ !cancelled() }}
               with:

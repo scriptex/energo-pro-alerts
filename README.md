@@ -35,11 +35,10 @@ EMAIL_TO="recipient@example.com"
 # API key for Brevo (formerly known as Sendinblue)
 SENDINBLUE_API_KEY="abc-123"
 
-# Your client ID as shown in the invoices and the contract
-USERNAME='123456789'
-
-# The last four digits of your unique ID (ЕГН)
-PASSWORD='1234'
+# Array of Credential tuples: [USERNAME, PASSWORD]
+# USERNAME is your client ID as shown in the invoices and the contract
+# PASSWORD is the last four digits of your unique ID (ЕГН)
+CREDENTIALS='[[USERNAME, PASSWORD]]'
 ```
 
 ## Available ways to use the code in this repository

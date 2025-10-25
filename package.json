@@ -25,9 +25,9 @@
 		"start": "yarn playwright test"
 	},
 	"dependencies": {
-		"@playwright/test": "1.56.0",
+		"@playwright/test": "1.56.1",
 		"@sendinblue/client": "3.3.1",
-		"@types/node": "22.18.10",
+		"@types/node": "22.18.12",
 		"dotenv": "17.2.3",
 		"html-minifier": "4.0.0"
 	}

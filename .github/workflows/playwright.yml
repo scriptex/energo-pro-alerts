@@ -32,7 +32,7 @@ jobs:
                   EMAIL_TO: ${{ secrets.EMAIL_TO }}
                   SENDINBLUE_API_KEY: ${{ secrets.SENDINBLUE_API_KEY }}
                   CREDENTIALS: ${{ secrets.CREDENTIALS }}
-            - uses: actions/upload-artifact@v4
+            - uses: actions/upload-artifact@v5
               if: ${{ !cancelled() }}
               with:
                   name: playwright-report

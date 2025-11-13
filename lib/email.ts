@@ -3,7 +3,7 @@ import { SendSmtpEmail, TransactionalEmailsApi } from '@sendinblue/client';
 
 export async function email(htmlContent: string) {
 	const sendSMTPEmail = new SendSmtpEmail();
-	const transactionalEmailsAPI = new TransactionalEmailsApi(process.env.SENDINBLUE_API_KEY!);
+	const transactionalEmailsAPI = new TransactionalEmailsApi();
 
 	transactionalEmailsAPI['authentications']['apiKey'].apiKey = process.env.SENDINBLUE_API_KEY || '';
 

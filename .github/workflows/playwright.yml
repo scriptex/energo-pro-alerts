@@ -8,7 +8,6 @@ on:
 jobs:
     main:
         timeout-minutes: 60
-
         runs-on: ubuntu-latest
 
         permissions:
@@ -17,13 +16,18 @@ jobs:
 
         steps:
             - uses: actions/checkout@v5
+
             - uses: actions/setup-node@v6
               with:
                   node-version: lts/*
+                  cache: 'yarn'
+
             - name: Install dependencies
-              run: npm install -g yarn && yarn
+              run: yarn install --frozen-lockfile
+
             - name: Install Playwright Browsers
               run: yarn playwright install --with-deps
+
             - name: Run Playwright tests
               run: yarn playwright test
               env:
@@ -32,12 +36,14 @@ jobs:
                   EMAIL_TO: ${{ secrets.EMAIL_TO }}
                   SENDINBLUE_API_KEY: ${{ secrets.SENDINBLUE_API_KEY }}
                   CREDENTIALS: ${{ secrets.CREDENTIALS }}
+
             - uses: actions/upload-artifact@v5
               if: ${{ !cancelled() }}
               with:
                   name: playwright-report
                   path: playwright-report/
                   retention-days: 30
+
             - name: Push Changes
               uses: ad-m/github-push-action@master
               with:

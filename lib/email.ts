@@ -1,10 +1,14 @@
 import { IncomingMessage } from 'node:http';
-import { SendSmtpEmail, TransactionalEmailsApi } from '@sendinblue/client';
 
-export async function email(htmlContent: string) {
+import { SendSmtpEmail, CreateSmtpEmail, TransactionalEmailsApi } from '@sendinblue/client';
+
+import { EmailError } from './types';
+
+export async function email(htmlContent: string): Promise<{ response: IncomingMessage; body: CreateSmtpEmail } | void> {
 	const sendSMTPEmail = new SendSmtpEmail();
 	const transactionalEmailsAPI = new TransactionalEmailsApi();
 
+	// prettier-ignore
 	transactionalEmailsAPI['authentications']['apiKey'].apiKey = process.env.SENDINBLUE_API_KEY || '';
 
 	sendSMTPEmail.to = [{ email: process.env.EMAIL_TO! }];
@@ -18,7 +22,9 @@ export async function email(htmlContent: string) {
 		console.log('✅ Email sent:', res.response.statusCode);
 
 		return res;
-	} catch (err: any) {
+	} catch (e: unknown) {
+		const err = e as EmailError;
+
 		console.error('❌ Email send failed');
 		console.error('Error name:', err.name);
 		console.error('Message:', err.message);

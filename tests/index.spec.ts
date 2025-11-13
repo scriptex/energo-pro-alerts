@@ -7,6 +7,7 @@ import { test } from '@playwright/test';
 
 import { html } from '../lib/html';
 import { email } from '../lib/email';
+import { EmailError } from '../lib/types';
 
 const { writeFile, unlink } = promises;
 
@@ -64,8 +65,8 @@ test('find alerts', async ({ page }) => {
 
 	try {
 		await email(results.join('<br><br>'));
-	} catch (e) {
-		const error = e as any;
+	} catch (e: unknown) {
+		const error = e as EmailError;
 
 		console.error('Email send failed:', error.message, error.response?.data || error.stack);
 	}

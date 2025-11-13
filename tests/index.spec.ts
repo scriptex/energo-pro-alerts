@@ -59,12 +59,16 @@ test('find alerts', async ({ page }) => {
 
 		results.push($.html());
 
-		console.log(results);
-
 		await page.locator('[href="/logout"]').click();
 	}
 
-	await email(results.join('<br><br>'));
+	try {
+		await email(results.join('<br><br>'));
+	} catch (e) {
+		const error = e as any;
+
+		console.error('Email send failed:', error.message, error.response?.data || error.stack);
+	}
 
 	await writeFile(
 		filename,

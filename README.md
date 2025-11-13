@@ -3,7 +3,6 @@
 [![Send Email and Deploy](https://github.com/scriptex/energo-pro-alerts/actions/workflows/playwright.yml/badge.svg)](https://github.com/scriptex/energo-pro-alerts/actions/workflows/playwright.yml)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/16296604bcb64660a17f66310c10c06b)](https://app.codacy.com/gh/scriptex/energo-pro-alerts/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-[![codebeat badge](https://codebeat.co/badges/153dd2d6-f6fb-481c-b3ac-a2b73edd907d)](https://codebeat.co/projects/github-com-scriptex-energo-pro-alerts-main)
 [![CodeFactor](https://www.codefactor.io/repository/github/scriptex/energo-pro-alerts/badge)](https://www.codefactor.io/repository/github/scriptex/energo-pro-alerts)
 [![DeepScan grade](https://deepscan.io/api/teams/3574/projects/29095/branches/936158/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=3574&pid=29095&bid=936158)
 [![Analytics](https://ga-beacon.atanas.info/api/analytics?account=UA-83446952-1&page=github.com/scriptex/energo-pro-alerts&pixel)](https://github.com/scriptex/energo-pro-alerts/)
@@ -118,11 +117,11 @@ MIT
     </a>
     &nbsp;
     <a href="https://profile.codersrank.io/user/scriptex">
-        <img src="https://raw.githubusercontent.com/scriptex/socials/master/styled-assets/codersrank.svg" height="20" alt="">
+        <img src="https://raw.githubusercontent.com/scriptex/socials/master/styled-assets/codersrank.svg" width="32" height="20" alt="">
     </a>
     &nbsp;
     <a href="https://linktr.ee/scriptex">
-        <img src="https://raw.githubusercontent.com/scriptex/socials/master/styled-assets/linktree.svg" height="20" alt="">
+        <img src="https://raw.githubusercontent.com/scriptex/socials/master/styled-assets/linktree.svg" width="24" height="20" alt="">
     </a>
 </div>
 

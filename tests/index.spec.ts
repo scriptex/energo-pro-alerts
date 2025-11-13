@@ -39,11 +39,8 @@ test('find alerts', async ({ page }) => {
 		await page.locator('[name="username"]').fill(username.toString());
 		await page.locator('[name="pin"]').fill(password.toString());
 		await page.locator('[type="submit"]').click();
-		await page.selectOption('[name="type"]', 'all');
 
-		const searchIcon = page.locator('.dripicons-search');
-
-		await page.getByRole('button').filter({ has: searchIcon }).click();
+		await page.goto('https://tok.erpsever.bg/outages?cpnum=&type=all');
 
 		const table = await page.locator('.table-responsive');
 		const html = await table.evaluate(el => el.innerHTML);

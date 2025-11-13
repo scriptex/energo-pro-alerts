@@ -15,6 +15,14 @@ jobs:
             pull-requests: write
 
         steps:
+            - name: Debug env
+              run: env | grep EMAIL_
+              env:
+                  EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+                  EMAIL_SUBJECT: ${{ secrets.EMAIL_SUBJECT }}
+                  EMAIL_TO: ${{ secrets.EMAIL_TO }}
+                  EMAIL_CREDENTIALS: ${{ secrets.CREDENTIALS }}
+
             - uses: actions/checkout@v5
 
             - uses: actions/setup-node@v6

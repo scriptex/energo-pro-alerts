@@ -59,6 +59,8 @@ test('find alerts', async ({ page }) => {
 
 		results.push($.html());
 
+		console.log(results);
+
 		await page.locator('[href="/logout"]').click();
 	}
 

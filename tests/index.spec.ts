@@ -62,6 +62,8 @@ test('find alerts', async ({ page }) => {
 		await page.locator('[href="/logout"]').click();
 	}
 
+	await email(results.join('<br><br>'));
+
 	await writeFile(
 		filename,
 		minify(html(results.join('<br><br>')), {

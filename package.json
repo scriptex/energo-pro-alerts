@@ -22,13 +22,22 @@
 		"url": "github:scriptex/energo-pro-alerts"
 	},
 	"scripts": {
-		"start": "yarn playwright test"
+		"start": "yarn playwright test",
+		"dev": "yarn playwright test --ui"
 	},
 	"dependencies": {
 		"@playwright/test": "1.56.1",
 		"@sendinblue/client": "3.3.1",
-		"@types/node": "24.10.0",
+		"cheerio": "1.1.2",
 		"dotenv": "17.2.3",
 		"html-minifier": "4.0.0"
+	},
+	"devDependencies": {
+		"@types/html-minifier": "4.0.6",
+		"@types/node": "24.10.1"
+	},
+	"resolutions": {
+		"form-data": "4.0.4",
+		"tough-cookie": "6.0.0"
 	}
 }

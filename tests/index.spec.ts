@@ -13,6 +13,9 @@ const { writeFile, unlink } = promises;
 
 const filename = resolve(__dirname, '..', 'public', 'index.html');
 
+// prettier-ignore
+const write = async (filename: string, text: string) => await writeFile(filename, minify(html(text), { collapseWhitespace: true }), 'utf-8');
+
 test('find alerts', async ({ page }) => {
 	const credentials = JSON.parse(process.env.CREDENTIALS || '[]');
 
@@ -55,24 +58,28 @@ test('find alerts', async ({ page }) => {
 		$('th:nth-child(2)').remove();
 		$('td:nth-child(2)').remove();
 
-		results.push($.html());
+		if (!html.includes('За обекта няма прекъсване на електрозахранването')) {
+			results.push($.html());
+		}
 
 		await page.locator('[href="/logout"]').click();
 	}
 
+	if (results.length === 0) {
+		await write(filename, '<p>Няма данни за прекъсване на електрозахранването.</p>');
+
+		return;
+	}
+
+	const text = results.join('<br><br>');
+
 	try {
-		await email(results.join('<br><br>'));
+		await email(text);
 	} catch (e: unknown) {
 		const error = e as EmailError;
 
 		console.error('Email send failed:', error.message, error.response?.data || error.stack);
 	}
 
-	await writeFile(
-		filename,
-		minify(html(results.join('<br><br>')), {
-			collapseWhitespace: true
-		}),
-		'utf-8'
-	);
+	await writeFile(filename, text);
 });

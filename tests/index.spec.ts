@@ -81,5 +81,5 @@ test('find alerts', async ({ page }) => {
 		console.error('Email send failed:', error.message, error.response?.data || error.stack);
 	}
 
-	await writeFile(filename, html(text));
+	await writeFile(filename, text);
 });

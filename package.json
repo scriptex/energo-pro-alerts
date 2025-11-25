@@ -26,7 +26,7 @@
 		"dev": "yarn playwright test --ui"
 	},
 	"dependencies": {
-		"@playwright/test": "1.56.1",
+		"@playwright/test": "1.57.0",
 		"@sendinblue/client": "3.3.1",
 		"cheerio": "1.1.2",
 		"dotenv": "17.2.3",

@@ -37,7 +37,7 @@ jobs:
                   SENDINBLUE_API_KEY: ${{ secrets.SENDINBLUE_API_KEY }}
                   CREDENTIALS: ${{ secrets.CREDENTIALS }}
 
-            - uses: actions/upload-artifact@v5
+            - uses: actions/upload-artifact@v6
               if: ${{ !cancelled() }}
               with:
                   name: playwright-report

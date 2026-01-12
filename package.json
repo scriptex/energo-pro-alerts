@@ -26,18 +26,14 @@
 		"dev": "yarn playwright test --ui"
 	},
 	"dependencies": {
+		"@getbrevo/brevo": "3.0.1",
 		"@playwright/test": "1.57.0",
-		"@sendinblue/client": "3.3.1",
 		"cheerio": "1.1.2",
 		"dotenv": "17.2.3",
 		"html-minifier": "4.0.0"
 	},
 	"devDependencies": {
 		"@types/html-minifier": "4.0.6",
-		"@types/node": "24.10.7"
-	},
-	"resolutions": {
-		"form-data": "4.0.5",
-		"tough-cookie": "6.0.0"
+		"@types/node": "25.0.6"
 	}
 }

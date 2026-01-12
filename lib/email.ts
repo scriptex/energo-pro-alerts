@@ -1,6 +1,6 @@
 import { IncomingMessage } from 'node:http';
 
-import { SendSmtpEmail, CreateSmtpEmail, TransactionalEmailsApi } from '@sendinblue/client';
+import { SendSmtpEmail, CreateSmtpEmail, TransactionalEmailsApi } from '@getbrevo/brevo';
 
 import { EmailError } from './types';
 

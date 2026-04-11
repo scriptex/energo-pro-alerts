@@ -26,7 +26,7 @@
 		"dev": "yarn playwright test --ui"
 	},
 	"dependencies": {
-		"@getbrevo/brevo": "5.0.3",
+		"@getbrevo/brevo": "5.0.4",
 		"@playwright/test": "1.58.2",
 		"cheerio": "1.2.0",
 		"dotenv": "17.3.1",
@@ -34,6 +34,6 @@
 	},
 	"devDependencies": {
 		"@types/html-minifier": "4.0.6",
-		"@types/node": "25.5.0"
+		"@types/node": "25.5.2"
 	}
 }

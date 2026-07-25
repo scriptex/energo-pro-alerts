@@ -27,7 +27,7 @@
 	},
 	"dependencies": {
 		"@getbrevo/brevo": "6.0.2",
-		"@playwright/test": "1.61.1",
+		"@playwright/test": "1.62.0",
 		"cheerio": "1.2.0",
 		"dotenv": "17.4.2",
 		"html-minifier": "4.0.0"

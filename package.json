@@ -29,7 +29,7 @@
 		"@getbrevo/brevo": "6.0.3",
 		"@playwright/test": "1.63.0",
 		"cheerio": "1.2.0",
-		"dotenv": "17.4.2",
+		"dotenv": "18.0.4",
 		"html-minifier": "4.0.0"
 	},
 	"devDependencies": {

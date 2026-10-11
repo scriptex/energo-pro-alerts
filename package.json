@@ -29,11 +29,11 @@
 		"@getbrevo/brevo": "6.0.3",
 		"@playwright/test": "1.63.0",
 		"cheerio": "1.2.0",
-		"dotenv": "18.0.4",
+		"dotenv": "18.0.7",
 		"html-minifier": "4.0.0"
 	},
 	"devDependencies": {
 		"@types/html-minifier": "4.0.6",
-		"@types/node": "25.9.8"
+		"@types/node": "25.9.9"
 	}
 }

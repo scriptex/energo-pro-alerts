@@ -1,25 +1,20 @@
-import { IncomingMessage } from 'node:http';
-
-import { SendSmtpEmail, CreateSmtpEmail, TransactionalEmailsApi } from '@getbrevo/brevo';
-
 import { EmailError } from './types';
+import { BrevoClient } from '@getbrevo/brevo';
 
-export async function email(htmlContent: string): Promise<{ response: IncomingMessage; body: CreateSmtpEmail } | void> {
-	const sendSMTPEmail = new SendSmtpEmail();
-	const transactionalEmailsAPI = new TransactionalEmailsApi();
+const brevo = new BrevoClient({
+	apiKey: process.env.SENDINBLUE_API_KEY
+});
 
-	// prettier-ignore
-	transactionalEmailsAPI['authentications']['apiKey'].apiKey = process.env.SENDINBLUE_API_KEY || '';
-
-	sendSMTPEmail.to = [{ email: process.env.EMAIL_TO! }];
-	sendSMTPEmail.sender = { email: process.env.EMAIL_FROM };
-	sendSMTPEmail.subject = process.env.EMAIL_SUBJECT;
-	sendSMTPEmail.htmlContent = htmlContent;
-
+export async function email(htmlContent: string) {
 	try {
-		const res = await transactionalEmailsAPI.sendTransacEmail(sendSMTPEmail);
+		const res = await brevo.transactionalEmails.sendTransacEmail({
+			subject: process.env.EMAIL_SUBJECT,
+			htmlContent,
+			sender: { email: process.env.EMAIL_FROM },
+			to: [{ email: process.env.EMAIL_TO! }]
+		});
 
-		console.log('✅ Email sent:', res.response.statusCode);
+		console.log('✅ Email sent:', res);
 
 		return res;
 	} catch (e: unknown) {

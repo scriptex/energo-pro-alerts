@@ -1,5 +1,6 @@
 import { existsSync, promises } from 'node:fs';
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import * as cheerio from 'cheerio';
 import { minify } from 'html-minifier';
@@ -11,10 +12,13 @@ import { EmailError } from '../lib/types';
 
 const { writeFile, unlink } = promises;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const filename = resolve(__dirname, '..', 'public', 'index.html');
 
 // prettier-ignore
-const write = async (filename: string, text: string) => await writeFile(filename, minify(html(text), { collapseWhitespace: true }), 'utf-8');
+const write = async (filename: string, text: string) => await writeFile(filename, await minify(html(text), { collapseWhitespace: true }), 'utf-8');
 
 test('find alerts', async ({ page }) => {
 	const credentials = JSON.parse(process.env.CREDENTIALS || '[]');

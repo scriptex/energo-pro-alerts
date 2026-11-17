@@ -2,7 +2,7 @@ import { EmailError } from './types';
 import { BrevoClient } from '@getbrevo/brevo';
 
 const brevo = new BrevoClient({
-	apiKey: 'your-api-key'
+	apiKey: process.env.SENDINBLUE_API_KEY
 });
 
 export async function email(htmlContent: string) {

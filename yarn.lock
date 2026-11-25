@@ -84,7 +84,7 @@
   dependencies:
     source-map "^0.6.1"
 
-acorn@^8.15.0:
+acorn@^8.15.0, acorn@^8.19.0:
   version "8.19.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.19.0.tgz#6b26fd97ce1cc9dc50bdf7ad305e9f1384d4f28a"
   integrity sha512-oJlA3XiRm7Cyk6qFD2Jn8ak9B7jSy0qy00ADO3+8dpT0LSjFihQYv4C02LFCSYJV3Q37xYwwRy5m+IpIiUzqWw==
@@ -266,16 +266,17 @@ entities@^9.0.0:
   resolved "https://registry.yarnpkg.com/entities/-/entities-9.0.0.tgz#c45df3cdbc5ce805474759f4ec4ea7907d9d5477"
   integrity sha512-oJFNDJg3kTPwAD1cNn2+WmUq4wFoo09npc3Ydf1D7ED4smRiWrsKnaLxykrTWgyGEcusc87P5dxlAleol9kpkg==
 
-html-minifier@5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-5.3.0.tgz#b7c00365dad937dff429c9e49a7f7407fde53bad"
-  integrity sha512-bjlaCWOg7KTk8+UBQuG5vD8WT6LSf+eSY+nMphtNrL6sXcAadXNYAl27o0MSrUxyhZE1vst8Af700GA73UPALQ==
+html-minifier@5.4.1:
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-5.4.1.tgz#51c87e0ec66623c09987c32f344a428f69dc1fc8"
+  integrity sha512-lRM8xRRFpNWoE0tnv/LchwQWOcz68j/6cl+BctcAA7BehbfokIx/BEng2KhVhu67I89h7dYC30xneddc7juGzw==
   dependencies:
+    acorn "^8.19.0"
     commander "^15.1.0"
     entities "^9.0.0"
     lightningcss "^1.33.0"
     svgo "^4.1.0"
-    terser "^5.51.2"
+    terser "^5.51.4"
 
 htmlparser2@^10.1.0:
   version "10.1.0"
@@ -465,10 +466,10 @@ svgo@^4.1.0:
     picocolors "^1.1.1"
     sax "1.6.1"
 
-terser@^5.51.2:
-  version "5.51.2"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-5.51.2.tgz#555912425a7f2ff7737425c3718fa76c7069f6ef"
-  integrity sha512-bWnjSNscmuI+GJze6ZupnHP8G/cTcsJF+bXCeQknk2SHQsgbNJnLrqiH9jZ2W4STPVXH2mDKKRX3iwPhc9Cn/Q==
+terser@^5.51.4:
+  version "5.51.4"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-5.51.4.tgz#b3874fdb414054ec2cb54522fef78c6773a0fc85"
+  integrity sha512-VPi1CkDvCWLGUVIToctNBG+NdHbSXwOPjHJnQ3pdB0XknaldnI76wSkAFOGxV2ZdkzOP5d6gpQ5c58XvDghRvw==
   dependencies:
     "@jridgewell/source-map" "^0.3.3"
     acorn "^8.15.0"
